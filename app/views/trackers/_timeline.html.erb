@@ -1,27 +1,5 @@
-<%#
-
-<li class='work'>
-  <input class='radio' id='work5' name='works' type='radio' checked>
-  <div class="relative">
-    <span class='date'>12 May 2013</span>
-    <span class='circle'></span>
-  </div>
-  <div class='content'>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio ea necessitatibus quo velit natus cupiditate qui alias possimus ab praesentium nostrum quidem obcaecati nesciunt! Molestiae officiis voluptate excepturi rem veritatis eum aliquam qui laborum non ipsam ullam tempore reprehenderit illum eligendi cumque mollitia temporibus! Natus dicta qui est optio rerum.
-    </p>
-  </div>
-</li>
-
- %>
-
-
 <ul id='timeline'>
-
-  <%# 21 rows %>
-
   <% j = 1 %>
-
   <% (1..21).each do |i| %>
     <% j += 9 %>
 
@@ -38,13 +16,19 @@
       <div class="relative">
         <span class="date">
           <% if !last_time.blank? && next_time.blank? && !time.blank? %>
-            <%= image_tag 'logo.png' %>
+            <% case %>
+            <% when j <= 27 %>
+              <%= image_tag 'ross-swimming.png' %>
+            <%  when j >27 && j <= 108 %>
+              <%= image_tag 'ross-biking.png' %>
+            <% when j > 108 && j <= 189 %>
+              <%= image_tag 'ross-running.png' %>
+            <% end %>
           <% end %>
         </span>
         <span class='circle'></span>
       </div>
     </li>
-
   <% end %>
 
 </ul>
