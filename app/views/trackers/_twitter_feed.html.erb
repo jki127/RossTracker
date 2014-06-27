@@ -1,0 +1,9 @@
+<h2>#TeamRoss</h2>
+
+<ul class="twitter-feed">
+  <% @tweets.each do |tweet| %>
+    <li class="tweet">
+      <%= tweet.text %>
+    </li>
+  <% end %>
+</ul>
