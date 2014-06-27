@@ -1,15 +1,22 @@
-<h2>Ross Tracker</h2>
-<p>Track @rossk's progress in the IronMan 2014 Race!</p>
-<%= render 'timeline' %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= image_tag 'logo.png', class: 'logo' %>
+    <p>Track @rossk's progress in the 2014 IRONMAN Coeur d'Alene!</p>
+  </div>
+</div>
 
-<%= form_for @tweet, url: tweets_path do |f| %>
-<%= f.text_field :text %>
-<%= f.submit "Hell Yeah Ross!" %>
-<% end %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= render 'timeline' %>
+  </div>
+</div>
 
-<% @tweets.each do |tweet| %>
-  <%= tweet.text %>
-<% end %>
+<div class="row">
+  <div class="large-6 columns">
+    <%= render 'twitter_form' %>
+  </div>
 
-
-<%= @name %>
+  <div class="large-6 columns">
+    <%= render 'twitter_feed' %>
+  </div>
+</div>

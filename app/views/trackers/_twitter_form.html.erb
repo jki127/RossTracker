@@ -1,4 +1,6 @@
+<h2 class="white">Give Ross more energy!</h2>
+
 <%= form_for @tweet, url: tweets_path do |f| %>
-  <%= f.text_field :text %>
-  <%= f.submit "Hell Yeah Ross!" %>
+  <%= f.text_field :text, placeholder: "Enter a tweet!" %>
+  <%= f.submit "Hell Yeah Ross!", class: 'button' %>
 <% end %>
