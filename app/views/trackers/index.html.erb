@@ -1,3 +1,8 @@
 <h2>Ross Tracker</h2>
 <p>Track @rossk's progress in the IronMan 2014 Race!</p>
 <%= render 'timeline' %>
+
+<%= form_for @tweet, url: tweets_path do |f| %>
+<%= f.text_field :text %>
+<%= f.submit "Hell Yeah Ross!" %>
+<% end %>
