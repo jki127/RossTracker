@@ -19,11 +19,28 @@
 <ul id='timeline'>
 
   <%# 21 rows %>
-  <% (1..21).each do |i| %>
 
-    <li class='work' id="work<%= i %>">
+  <% j = 1 %>
+
+  <% (1..21).each do |i| %>
+    <% j += 9 %>
+
+    <% last_time = @document.css('tr td')[j - 9].text %>
+    <% time = @document.css('tr td')[j].text %>
+    <% next_time = @document.css('tr td')[j+9].text %>
+
+    <% if !time.blank? %>
+      <% className = 'coloredDot' %>
+    <% end %>
+
+    <li class='<%= className %>' id="work<%= j %>">
       <input class='radio' type='radio'>
       <div class="relative">
+        <span class="date">
+          <% if !last_time.blank? && next_time.blank? && !time.blank? %>
+            <%= image_tag 'logo.png' %>
+          <% end %>
+        </span>
         <span class='circle'></span>
       </div>
     </li>
