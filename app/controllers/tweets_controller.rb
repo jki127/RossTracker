@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
       config.access_token_secret = ENV['ACCESS_TOKEN_SECRET']
     end
 
-    @client.update(params[:tweet][:text] + " #TeamRoss")
+    @client.update(params[:tweet][:text] + " @rossta #TeamRoss")
     redirect_to root_path
   end
 
