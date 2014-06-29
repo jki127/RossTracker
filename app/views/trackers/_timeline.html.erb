@@ -1,34 +1,12 @@
-<ul id='timeline'>
-  <% j = 1 %>
-  <% (1..21).each do |i| %>
-    <% j += 9 %>
+<div class="row">
+  <div class='large-4 columns'>
+      <%= image_tag 'ross-swim.png' %>
+  </div>
+  <div class='large-4 columns'>
+    <%= image_tag 'ross-bike.png' %>
 
-    <% last_time = @document.css('tr td')[j - 9].text %>
-    <% time = @document.css('tr td')[j].text %>
-    <% next_time = @document.css('tr td')[j+9].text %>
-
-    <% if !time.blank? %>
-      <% className = 'coloredDot' %>
-    <% end %>
-
-    <li class='<%= className %>' id="work<%= j %>">
-      <input class='radio' type='radio'>
-      <div class="relative">
-        <span class="date">
-          <% if !last_time.blank? && next_time.blank? && !time.blank? %>
-            <% case %>
-            <% when j <= 27 %>
-              <%= image_tag 'ross-swimming.png' %>
-            <%  when j >27 && j <= 108 %>
-              <%= image_tag 'ross-biking.png' %>
-            <% when j > 108 && j <= 189 %>
-              <%= image_tag 'ross-running.png' %>
-            <% end %>
-          <% end %>
-        </span>
-        <span class='circle'></span>
-      </div>
-    </li>
-  <% end %>
-
-</ul>
+  </div>
+  <div class='large-4 columns'>
+    <%= image_tag 'ross-run.png' %>
+  </div>
+</div>

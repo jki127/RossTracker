@@ -1,4 +1,5 @@
-<h2>#TeamRoss</h2>
+<h2>#TeamRoss <%= image_tag '1upshroom.png' %>  x <%= Tweet.all.count %></h2>
+
 
 <ul class="twitter-feed">
   <% @tweets.each do |tweet| %>
@@ -7,3 +8,4 @@
     </li>
   <% end %>
 </ul>
+
