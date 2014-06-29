@@ -44,7 +44,7 @@ gem 'httparty'
 gem 'foundation-rails'
 
 group :production do
-  gem 'unicorn'
+  gem 'pg'
 end
 
 group :doc do
